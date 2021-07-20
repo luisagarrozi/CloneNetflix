@@ -1,126 +1,209 @@
 :root {
-    --vermelho: #e50914;
-    --preto: #141414;
+  --vermelho: #e50914;
+  --preto: #141414;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /*CSS da base do site*/
 
 body {
-background: var(--preto);
-font-family: 'Times New Roman', Times, serif;
-color: white;
+  background: var(--preto);
+  font-family: "Helvetica", "Times New Roman", Times, serif;
+  color: white;
 }
 
 header .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-
+header .logo-menu {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
 header .logo {
-    margin-left: 5px;
-    color: var(--vermelho);
-    font-family: 'Bebas Neue' ,'Arial Black', Times, serif;
-    font-size: 40px;
+  font-family: "Bebas Neue", cursive;
+  color: var(--vermelho);
+  font-size: 40px;
+  margin-left: 5px;
+  margin-right: 2rem;
 }
 
-    header nav a{
-text-decoration: none;
-color: #AAA;
-margin-right: 10px;
-    }
+[data-menu="button"] {
+  display: none;
+}
 
-    header nav a:hover {
-        color: #fff;
-    }
+header .nav ul {
+  display: flex;
+}
 
-    /*Parte do filme principal*/
+header .nav li {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 15px;
+}
 
-    .filme-principal{
-        font-size: 16px;
-        background: linear-gradient(rgba (0,0,0,.50), rgba(0,0,0,.50)100%);
-        background-image: url('../img/loki.jpg');
-        height: 400px;
-        background-size: cover;
+.nav .ativo {
+  color: #fff;
+}
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
+header .menu-icons i {
+  margin-right: 25px;
+  cursor: pointer;
+}
 
-    .filme-principal .descricao{
-        margin-top: 10px;
-        margin-bottom: 40px;
-        text-align: justify;
-        line-height: 18px;
-    }
+header nav a {
+  text-decoration: none;
+  color: #aaa;
+  margin-right: 10px;
+}
+header nav a:hover {
+  color: #fff;
+}
 
-    .filme-principal .container {
-        width: 40%;    
-        font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
-        font-size: 14px;
-    }
+/*Parte do filme principal*/
 
-    .titulo{
-        font-size: 40px;
-       }
+.filme-principal {
+  font-size: 16px;
+  background: linear-gradient(rgba (0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%);
+  background-image: url("../img/loki.jpg");
+  height: 400px;
+  background-size: cover;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
 
+.filme-principal .descricao {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: justify;
+  line-height: 18px;
+}
 
-    .button {
-        background-color: rgba(0, 0, 0, .50);
-        border: none;
-        color: white;
-        padding: 15px 30px;
-        margin-right: 15px;
-        font-size: 13px;
-        font-weight: bold;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: .5s ease all;
-    }
+.filme-principal .container {
+  width: 40%;
+  font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
+  font-size: 14px;
+}
 
-    .button:hover {
-        background-color: white;
-        color: black;
+.titulo {
+  font-size: 40px;
+}
 
-    }
+.button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  width: 40%;
+  height: 22%;
+  margin-right: 15px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.5s ease all;
+}
 
-    .container {
-        margin-left: 3%;
-    }
+.button:hover {
+  background-color: white;
+  color: black;
+}
 
-    /*Carrossel de filmes*/
-    .box-filme {
-height: 100%;
-width: 100%;
-display: block;
-cursor: pointer;
-    }
+.container {
+  margin-left: 3%;
+}
 
-    .carrossel-filmes {
-        margin-top: 6px;
-    }
-    /*Responsividade*/
+/*Carrossel de filmes*/
+.box-filme {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
 
-    @media screen and (max-width: 700px){
-        header .container {
-            display: flex;
-            flex-direction: column;
-        }
+.carrousel-filmes {
+  margin-top: 10px;
+}
 
-        .button {
-            height: 10%;
-            width: 100%;
-        }
-        .filme-principal .container {
-            width: 60%;
-        }
-    }
+/*Responsividade*/
+
+@media (max-width: 700px) {
+  .menu-icons {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-icons i {
+    margin-top: 10px;
+  }
+
+  main .container .titulo {
+    font-size: 35px;
+  }
+  main .container .descricao {
+    font-size: 13px;
+  }
+
+  .botao {
+    margin-top: 5px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-menu="list"] {
+    position: absolute;
+    width: 130px;
+    border-radius: 25px;
+    background-color: #141414;
+    z-index: 200;
+    top: 0;
+    padding: 60px 0 9px 8px;
+    transition: 0.5s;
+  }
+
+  header .nav ul {
+    display: none;
+  }
+  header .nav ul.active {
+    display: flex;
+    flex-direction: column;
+  }
+  header .nav ul.active li {
+    margin-top: 5px;
+  }
+
+  [data-menu="button"] {
+    display: block;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    z-index: 300;
+  }
+
+  button i {
+    margin-left: 5px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    width: 100%;
+    height: 11%;
+  }
+
+  .filme-principal .container {
+    width: 60%;
+  }
+}
